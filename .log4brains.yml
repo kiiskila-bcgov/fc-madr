@@ -1,0 +1,5 @@
+project:
+  name: Financial Components
+  tz: America/Vancouver
+  adrFolder: ./docs/adr
+  packages: []
