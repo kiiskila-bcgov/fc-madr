@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js Environment
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: Install Log4brains
         run: npm install -g log4brains
