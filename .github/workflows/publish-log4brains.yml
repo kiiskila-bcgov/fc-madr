@@ -1,0 +1,38 @@
+name: Publish Log4brains
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false  # Required for the deploy action
+          fetch-depth: 0  # Required by Log4brains to access full Git history
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Log4brains
+        run: npm install -g log4brains
+
+      - name: Build Log4brains Site
+        run: log4brains build --basePath /${{ github.repository }}/log4brains
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: .log4brains/out
+          target_folder: log4brains
+          commit_message: Deploy Log4brains site
+          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .log4brains/out
+          # Add .nojekyll file to bypass Jekyll processing
+          nojekyll: true
