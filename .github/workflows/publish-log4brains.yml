@@ -22,12 +22,15 @@ jobs:
         run: npm install -g log4brains
 
       - name: Build Log4brains Site
-        run: log4brains build --basePath /${{ github.repository }}/log4brains
+        run: log4brains build --basePath /${{ github.repository_owner }}/${{ github.event.repository.name }}/log4brains
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: .log4brains/out
+          target-folder: log4brains
+          commit-message: 'Deploy Log4brains site 🚀'
           clean: true
-          nojekyll: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          no-jekyll: true
