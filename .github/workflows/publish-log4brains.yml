@@ -6,17 +6,19 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Required for the deploy action
-          fetch-depth: 0  # Required by Log4brains to access full Git history
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Setup Node.js Environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install Log4brains
         run: npm install -g log4brains
@@ -25,7 +27,7 @@ jobs:
         run: log4brains build --basePath /${{ github.repository_owner }}/${{ github.event.repository.name }}/log4brains
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .log4brains/out
@@ -33,4 +35,3 @@ jobs:
           commit-message: 'Deploy Log4brains site 🚀'
           clean: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          no-jekyll: true
