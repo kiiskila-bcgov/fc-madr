@@ -24,7 +24,7 @@ jobs:
         run: npm install -g log4brains
 
       - name: Build Log4brains Site
-        run: log4brains build --basePath /${{ github.repository_owner }}/${{ github.event.repository.name }}/log4brains
+        run: log4brains build --basePath /Financial-Components-MADR/log4brains
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
