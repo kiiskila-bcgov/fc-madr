@@ -1,73 +1,71 @@
-# [short title of solved problem and solution]
+[//]: # (bc-madr v0.1.0)
+<!-- modified MADR 4.0.0 -->
 
-- Status: [draft | proposed | rejected | accepted | deprecated | … | superseded by [xxx](yyyymmdd-xxx.md)] <!-- optional -->
-- Deciders: [list everyone involved in the decision] <!-- optional -->
-- Date: [YYYY-MM-DD when the decision was last updated] <!-- optional. To customize the ordering without relying on Git creation dates and filenames -->
-- Tags: [space and/or comma separated list of tags] <!-- optional -->
+# {short title, representative of solved problem and found solution}
 
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* status: <!-- proposed | rejected | accepted | deprecated | ... | superseded by ADR-0123 -->
+* date: <!-- YYYY-MM-DD when the decision was last updated -->
+* decision-makers: <!-- list everyone involved in the decision -->
+* consulted: <!-- list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication --> <!-- OPTIONAL -->
+* informed: <!-- list everyone who is kept up-to-date on progress; and with whom there is a one-way communication} --> <!-- OPTIONAL -->
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+{Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story. You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers <!-- OPTIONAL -->
 
-- [driver 1, e.g., a force, facing concern, …]
-- [driver 2, e.g., a force, facing concern, …]
-- … <!-- numbers of drivers can vary -->
+* {decision driver 1, e.g., a force, facing concern, ...}
+* {decision driver 2, e.g., a force, facing concern, ...}
+* ... <!-- numbers of drivers can vary -->
 
 ## Considered Options
 
-- [option 1]
-- [option 2]
-- [option 3]
-- … <!-- numbers of options can vary -->
+* {title of option 1}
+* {title of option 2}
+* {title of option 3}
+* ... <!-- numbers of options can vary -->
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | ... | comes out best (see below)}.
 
-### Positive Consequences <!-- optional -->
+### Consequences
 
-- [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-- …
+* Good, because {positive consequence, e.g., improvement of one or more desired qualities, ...} <!-- OPTIONAL -->
+* Bad, because {negative consequence, e.g., compromising one or more desired qualities, ...} <!-- OPTIONAL -->
+* ... <!-- numbers of consequences can vary -->
 
-### Negative Consequences <!-- optional -->
+* Positive consequences were not explored. <!-- REQUIRED if no positive consequences listed, or -->
+* Negative consequences were not explored. <!-- REQUIRED if no negative consequences listed, or -->
+* Positive and negative consequences were not explored. <!-- REQUIRED instead if no positive or negative consequences listed -->
 
-- [e.g., compromising quality attribute, follow-up decisions required, …]
-- …
+### Confirmation <!-- OPTIONAL -->
 
-## Pros and Cons of the Options <!-- optional -->
+{Describe how the implementation of/compliance with the ADR can/will be confirmed. Are the design that was decided for and its implementation in line with the decision made? E.g., a design/code review or a test with a library such as ArchUnit can help validate this. Not that although we classify this element as optional, it is included in many ADRs.}
 
-### [option 1]
+## Pros and Cons of the Options <!-- OPTIONAL -->
 
-[example | description | pointer to more information | …] <!-- optional -->
+### {title of option 1}
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
+{example | description | pointer to more information | ...} <!-- OPTIONAL -->
 
-### [option 2]
+* Good, because {argument a}
+* Good, because {argument b}
+* Neutral, because {argument c} <!-- use "neutral" if the given argument weights neither for good nor bad -->
+* Bad, because {argument d}
+* ... <!-- numbers of pros and cons can vary -->
 
-[example | description | pointer to more information | …] <!-- optional -->
+### {title of other option}
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
+{example | description | pointer to more information | ...} <!-- OPTIONAL -->
 
-### [option 3]
+* Good, because {argument a}
+* Good, because {argument b}
+* Neutral, because {argument c}
+* Bad, because {argument d}
+* ...
 
-[example | description | pointer to more information | …] <!-- optional -->
+## More Information <!-- OPTIONAL -->
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-- [Link type](link to adr) <!-- example: Refined by [xxx](yyyymmdd-xxx.md) -->
-- … <!-- numbers of links can vary -->
+{You might want to provide additional evidence/confidence for the decision outcome here and/or document the team agreement on the decision and/or define when/how this decision the decision should be realized and if/when it should be re-visited. Links to other decisions and resources might appear here as well.}
