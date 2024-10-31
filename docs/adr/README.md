@@ -1,56 +1,101 @@
-# BC-MADR
+# Financial Components Architecture Decision Records
 
-Home repository defining BC Gov's (new) ADR standards.
+Welcome to the Architecture Decision Records (ADRs) repository for the **Financial Components** stream of the Application Modernization Program (AMP) in the Information Services Divison (ISD) of the Ministry of Social Development and Poverty Reduction (SDPR) for the Government of British Columbia.
 
-## What's an ADR?
+This repository contains all the architectural decisions made during the development of the Financial Components. ADRs help us document significant decisions that shape our project.
 
-[*Architectural Decision Records*](https://adr.github.io/), or ADRs, are a way of capturing the what/why/why nots of any particular architectural decision made for a project.
+## Viewing the ADRs
 
-More inclusively, ADRs can also be *Any Decision Record*—and this proposed standard intends to adhere to this as much as possible:
+ADRs are automatically published to our Log4brains architecture knowledge base:
 
-- Why did you choose to use React Native?
+🔗 **[Financial Components ADRs Knowledge Base](https://kiiskila-bcgov.github.io/fc-madr/log4brains/)**
 
-- Why doesn't the app sync every 30 minutes?
+Please use this link to browse and read the ADRs.
 
-- Do you need middleware upstream?
+## Development
 
-- Do we use different colours for dev/test/prod builds? Why does the dev build use pink?
+### Prerequisites
 
-## What is BC-MADR?
+- **Node.js**: Ensure you have Node.js installed. Download it from [nodejs.org](https://nodejs.org/).
+- **Log4brains**: Install Log4brains globally if you haven't already.
 
-BC-MADR is a proposed standard of documenting significant decisions about the direction of any project (with a focus on software development projects).
+### Installing Log4brains
 
-It's an opinionated extension of [MADR](https://adr.github.io/madr/), with an exceptionally imaginative name.
+```bash
+npm install -g log4brains
+```
 
-## Why use this?
+### Previewing the Knowledge Base Locally
 
-What we hope to achieve with BC-MADR is a standardized and predictable way to create and store relevant information about why decisions were made for any project that uses them, rather than fishing through cloud storage to find a Word doc.
+To preview the ADRs locally with hot-reloading enabled:
 
-There aren't many specific documentation standards that are well known, so documentation across projects is typically created from scratch every time. It'll have a different structure, or will be organized differently, and needs to be learned anew in each instance.
+```bash
+log4brains preview
+```
 
-If it isn't deliberately organized in a proper documentation system, chances are high that it'll get lost—or worse, won't be easily discoverable after is *is* lost.
+In preview mode, any changes you make to a markdown file are automatically reflected in the UI.
 
-## Do I need to use this?
+### Creating a New ADR
 
-No. This isn't enforced by anyone.
+To create a new ADR interactively:
 
-## How will this repository be used?
+```bash
+log4brains adr new
+```
 
-This repository is meant to define and host publicly-available BC-MADR specifications and templates. Comments and discussion and welcome, encouraged, and requested from anyone.
+Follow the prompts to fill in the details of your ADR.
 
-## Get started with BC-MADR
+## Contributing
 
-If you want to hit the ground running, make a copy of [bc-madr-template.md](bc-madr-template.md) from the `main` branch and start writing!
+We welcome contributions from all team members. To contribute:
 
-The template includes comments with directions on how to fill the sections out.
+**1. Clone the Repository**
 
-If you want exhaustive information about how BC-MADRs should be created and organized, and the template itself doesn't contain enough info, read the [bc-madr-specification.md](bc-madr-specification.md) additional context.
+```bash
+git clone https://github.com/kiiskila-bcgov/fc-madr.git
+```
 
-## I have a suggestion!
+**2. Navigate to the Repository**
 
-Fantastic! Open a GitHub discussion about what you're thinking and let's chat.
+```bash
+cd fc-madr
+```
 
-## Special thanks
+**3. Create a New Branch**
 
-- [adr.github.io](https://adr.github.io/) for compiling ADR information and for igniting the spark for this journey
-- [Markdown Architectural Decision Records (MADR)](https://github.com/adr/madr) for their effort in creating and refining the ADR template this repo adapts
+```bash
+git checkout -b your-branch-name
+```
+
+Replace your-branch-name with a descriptive name for your branch.
+
+**4. Make Changes**
+
+- Add or edit ADRs using Log4brains.
+- Follow the MADR template located in docs/decisions.
+
+**5. Commit Your Changes**
+
+```bash
+git add .
+git commit -m "Add ADR for [decision title]"
+```
+
+**6. Push to GitHub**
+
+```bash
+git push origin your-branch-name
+```
+
+**7. Create a Pull Request**
+
+- Go to the repository on GitHub.
+- Click on "Compare & pull request".
+- Provide a description of your changes and submit the pull request.
+
+## More Information
+
+- [Log4brains Documentation](https://github.com/thomvaill/log4brains/tree/master#readme/)
+- [What is an ADR and Why Should You Use Them](https://github.com/thomvaill/log4brains/tree/master#-what-is-an-adr-and-why-should-you-use-them)
+- [ADR GitHub Organization](https://adr.github.io/)
+- [BC Government MADR Specification](https://github.com/bcgov-isd/bc-madr/)
