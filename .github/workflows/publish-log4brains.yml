@@ -14,21 +14,30 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-
       - name: Setup Node.js Environment
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-
       - name: Install Log4brains
         run: npm install -g log4brains
-
-      - name: Initialize Log4brains
-        run: log4brains init
-
+      - name: Debug Pre-Build
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Config file contents:"
+          cat .log4brains.yml
+          echo "ADR directory contents:"
+          ls -la docs/adr/
       - name: Build Log4brains Site
-        run: log4brains build --basePath /fc-madr/log4brains
-
+        run: log4brains build --verbose --basePath /fc-madr/log4brains
+      - name: Debug Post-Build
+        run: |
+          echo "Log4brains directory:"
+          ls -la .log4brains || echo ".log4brains directory does not exist"
+          echo "Output directory:"
+          ls -la .log4brains/out || echo ".log4brains/out directory does not exist"
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
