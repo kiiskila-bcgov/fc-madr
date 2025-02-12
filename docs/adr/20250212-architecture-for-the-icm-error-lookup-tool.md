@@ -1,5 +1,7 @@
 # Architecture for the ICM Error Lookup Tool
 
+- status: proposed
+- date: 2025-02-12
 - **decision-makers:** Zorin Samji, Will Kiiskila
 - **consulted:** Spencer Rose
 - **informed:** TBD (Greh Froh)
