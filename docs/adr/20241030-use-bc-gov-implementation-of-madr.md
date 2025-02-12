@@ -1,7 +1,3 @@
-[//]: # "bc-madr v0.1.0"
-
-<!-- modified MADR 4.0.0 -->
-
 # Use BC Gov implementation of MADR
 
 - status: proposed <!-- proposed | rejected | accepted | deprecated | ... | superseded by ADR-0123 -->
