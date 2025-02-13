@@ -1,10 +1,10 @@
 # Architecture for the ICM Error Lookup Tool
 
 - status: proposed
-- date: 2025-02-12
+- date: 2025-02-13
 - **decision-makers:** Zorin Samji, Will Kiiskila
 - **consulted:** Spencer Rose
-- **informed:** TBD (Greh Froh)
+- **informed:** Greg Froh, Jeremy Vernon
 
 ## Context and Problem Statement
 
@@ -32,7 +32,7 @@ We need to build a simple web application, the ICM Error Lookup Tool (IET), that
 
 ### Consequences
 
-- Good, because it leverages existing Klamm infrastructure for data management
+- Good, because it uses existing Klamm infrastructure for data management
 - Good, because it maintains a clear separation between data management and presentation
 - Good, because it eliminates the need for maintaining a separate database system
 - Good, because it enables future flexibility to switch data sources without affecting the frontend
@@ -48,8 +48,10 @@ We need to build a simple web application, the ICM Error Lookup Tool (IET), that
 Using the existing Klamm system directly to manage and serve IET data.
 
 - Good, because it requires minimal initial development effort
+- Good, because Klamm has long term support
 - Good, because it leverages existing infrastructure and tools
-- Bad, because it creates a reliance on Klamm from IET
+- Bad, because it creates a reliance on Klamm for managing data
+- Bad, because IET will always need a live connection to Klamm to function
 
 ### Dedicated Klamm Instance
 
@@ -57,6 +59,7 @@ Creating a new instance of Klamm specifically for IET.
 
 - Good, because it provides system independence
 - Good, because it uses familiar tools
+- Bad, because Klamm has been directed to not be split but exist as one tool for multiple teams
 - Bad, because it requires maintaining a separate Klamm instance
 - Bad, because it duplicates infrastructure unnecessarily
 
@@ -69,6 +72,7 @@ Creating a completely separate backend and database for IET.
 - Bad, because it requires more development effort
 - Bad, because it requires separate database maintenance and backups
 - Bad, because it adds unnecessary complexity for a simple use case
+- Bad, because we are adding data that could be in Klamm in an additional location
 
 ### JSON Export Architecture
 
@@ -77,6 +81,7 @@ Using Klamm for data management with automated JSON export process.
 - Good, because it uses existing Klamm for content management
 - Good, because it enables simple, static hosting of the lookup tool (no backend needed)
 - Good, because it allows for future flexibility in data sources
+- Good, because it removes the reliance on Klamm for a live connection
 - Bad, because it requires setting up and maintaining an export process
 - Bad, because it introduces a slight delay in data updates
 - Neutral, because it requires setting up GitHub Actions but simplifies ongoing operations
