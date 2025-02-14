@@ -43,7 +43,7 @@ Chosen option: **"JSON Export Architecture" (Option 1)**, because it balances si
 
 ## Pros and Cons of the Other Options
 
-### Direct Klamm Integration
+### Direct Klamm Integration (Option 2)
 
 Using the existing Klamm system directly to manage and serve IET data.
 
@@ -53,7 +53,7 @@ Using the existing Klamm system directly to manage and serve IET data.
 - Bad, because it creates a reliance on Klamm for managing data
 - Bad, because IET will always need a live connection to Klamm to function
 
-### Dedicated Klamm Instance
+### Dedicated Klamm Instance (Option 3)
 
 Creating a new instance of Klamm specifically for IET.
 
@@ -63,7 +63,7 @@ Creating a new instance of Klamm specifically for IET.
 - Bad, because it requires maintaining a separate Klamm instance
 - Bad, because it duplicates infrastructure unnecessarily
 
-### Independent System
+### Independent System (Option 4)
 
 Creating a completely separate backend and database for IET.
 
@@ -76,7 +76,7 @@ Creating a completely separate backend and database for IET.
 
 ### Confirmation
 
-The implementation can be confirmed through:
+The implementation of the "JSON Export Architecture" (Option 1), can be confirmed through:
 
 1. Successful setup of the JSON export process from Klamm
 2. Verification of the GitHub Actions workflow for automated data updates
