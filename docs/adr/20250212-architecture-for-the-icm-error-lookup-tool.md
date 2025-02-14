@@ -57,6 +57,8 @@ Using the existing Klamm system directly to manage and serve IET data.
 - Bad, because it creates a reliance on Klamm for managing data
 - Bad, because IET will always need a live connection to Klamm to function
 
+![Direct Klamm Integration](/l4b-static/images/direct-klamm-integration.svg)
+
 ### Dedicated Klamm Instance (Option 3)
 
 Creating a new instance of Klamm specifically for IET.
@@ -66,6 +68,8 @@ Creating a new instance of Klamm specifically for IET.
 - Bad, because Klamm has been directed to not be split but exist as one tool for multiple teams
 - Bad, because it requires maintaining a separate Klamm instance
 - Bad, because it duplicates infrastructure unnecessarily
+
+![Dedicated Klamm Instance](/l4b-static/images/dedicated-klamm-instance.svg)
 
 ### Independent System (Option 4)
 
@@ -77,6 +81,8 @@ Creating a completely separate backend and database for IET.
 - Bad, because it requires separate database maintenance and backups
 - Bad, because it adds unnecessary complexity for a simple use case
 - Bad, because we are adding data that could be in Klamm in an additional location
+
+![Independent System](/l4b-static/images/independent-system.svg)
 
 ## Confirmation
 
