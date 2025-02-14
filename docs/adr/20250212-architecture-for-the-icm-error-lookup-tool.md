@@ -21,16 +21,16 @@ We need to build a simple web application, the ICM Error Lookup Tool (IET), that
 
 ## Considered Options
 
-- **Direct Klamm Integration:** Use existing Klamm (Laravel/Filament/Postgres Web Application) to manage IET data
-- **Dedicated Klamm Instance:** Create a new version of Klamm specifically for IET
-- **Independent System:** Create a separate dedicated backend/database for IET
-- **JSON Export Architecture:** Use Klamm for data management with automated JSON export process
+1. **JSON Export Architecture:** Use Klamm for data management with automated JSON export process
+2. **Direct Klamm Integration:** Use existing Klamm (Laravel/Filament/Postgres Web Application) to manage IET data
+3. **Dedicated Klamm Instance:** Create a new version of Klamm specifically for IET
+4. **Independent System:** Create a separate dedicated backend/database for IET
 
 ## Decision Outcome
 
-**Chosen option:** "JSON Export Architecture", because it balances simplicity, ease of maintainability and independence from outside systems. The goal is to use Klamm to manage the data but we export the data the IET uses so it can operate independently from Klamm. This also minimizes maintenance and in the event the system data should be decoupled from Klamm it can be done easily.
+Chosen option: **"JSON Export Architecture" (Option 1)**, because it balances simplicity, ease of maintainability and independence from outside systems. The goal is to use Klamm to manage the data but we export the data the IET uses so it can operate independently from Klamm. This also minimizes maintenance and in the event the system data should be decoupled from Klamm it can be done easily.
 
-### Consequences
+### Pros and Cons
 
 - Good, because it uses existing Klamm infrastructure for data management
 - Good, because it maintains a clear separation between data management and presentation
@@ -41,7 +41,7 @@ We need to build a simple web application, the ICM Error Lookup Tool (IET), that
 - Bad, because it may have slightly slower data update cycles compared to direct database access
 - Bad, because it requires setting up and maintaining GitHub Actions for the export process
 
-## Pros and Cons of the Options
+## Pros and Cons of the Other Options
 
 ### Direct Klamm Integration
 
@@ -73,18 +73,6 @@ Creating a completely separate backend and database for IET.
 - Bad, because it requires separate database maintenance and backups
 - Bad, because it adds unnecessary complexity for a simple use case
 - Bad, because we are adding data that could be in Klamm in an additional location
-
-### JSON Export Architecture
-
-Using Klamm for data management with automated JSON export process.
-
-- Good, because it uses existing Klamm for content management
-- Good, because it enables simple, static hosting of the lookup tool (no backend needed)
-- Good, because it allows for future flexibility in data sources
-- Good, because it removes the reliance on Klamm for a live connection
-- Bad, because it requires setting up and maintaining an export process
-- Bad, because it introduces a slight delay in data updates
-- Neutral, because it requires setting up GitHub Actions but simplifies ongoing operations
 
 ### Confirmation
 
