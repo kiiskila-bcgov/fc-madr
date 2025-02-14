@@ -1,6 +1,6 @@
 # Architecture for the ICM Error Lookup Tool
 
-- status: proposed
+- status: accepted
 - date: 2025-02-13
 - **decision-makers:** Zorin Samji, Will Kiiskila
 - **consulted:** Spencer Rose
@@ -74,7 +74,7 @@ Creating a completely separate backend and database for IET.
 - Bad, because it adds unnecessary complexity for a simple use case
 - Bad, because we are adding data that could be in Klamm in an additional location
 
-### Confirmation
+## Confirmation
 
 The implementation of the "JSON Export Architecture" (Option 1), can be confirmed through:
 
