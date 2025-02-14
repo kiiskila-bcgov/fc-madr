@@ -3,40 +3,29 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: {}
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
-          fetch-depth: 0
-      
-      - name: Setup Node.js Environment
+          persist-credentials: false # required by JamesIves/github-pages-deploy-action
+          fetch-depth: 0 # required by Log4brains to work correctly (needs the whole Git history)
+      - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 23.6
-      
-      - name: Install Log4brains
+      - name: Install and Build Log4brains
         run: |
           npm install -g log4brains
-          log4brains --version
-      
-      - name: Build Log4brains Site
-        env:
-          NODE_OPTIONS: ""
-        run: |
-          log4brains build --basePath /fc-madr/log4brains
-      
+          log4brains build
+          cp -R docs/l4b-static/* .log4brains/out/l4b-static/
+
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: .log4brains/out
-          target-folder: log4brains
-          commit-message: 'Deploy Log4brains site 🚀'
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .log4brains/out

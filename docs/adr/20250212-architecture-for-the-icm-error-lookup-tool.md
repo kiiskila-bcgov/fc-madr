@@ -41,6 +41,10 @@ Chosen option: **"JSON Export Architecture" (Option 1)**, because it balances si
 - Bad, because it may have slightly slower data update cycles compared to direct database access
 - Bad, because it requires setting up and maintaining GitHub Actions for the export process
 
+### Diagram
+
+![JSON Export Architecture](/l4b-static/images/json-export-architecture.svg)
+
 ## Pros and Cons of the Other Options
 
 ### Direct Klamm Integration (Option 2)
