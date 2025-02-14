@@ -23,7 +23,7 @@ jobs:
       - name: Install and Build Log4brains
         run: |
           npm install -g log4brains
-          log4brains build
+          log4brains build --basePath /fc-madr
           cp -R docs/l4b-static/* .log4brains/out/l4b-static/
 
       - name: Deploy to GitHub Pages
